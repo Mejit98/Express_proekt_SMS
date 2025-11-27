@@ -1,16 +1,19 @@
 const mongoose = require('mongoose');
-
 mongoose.connect('mongodb://127.0.0.1:27017/scoobyMongoose2025');
 
-var schema = mongoose.Schema({ name: String })
 
-schema.methods.gav = function(){
-   console.log(this.name + " сказал гав")
-}
+var Scooby = require('./models/scooby-du.js').Scooby
 
-const Scooby = mongoose.model('Scooby', schema);
 
-const scoobyEntry = new Scooby({ name: 'Скуби-ду' });
+var scooby_1 = new Scooby({
+   title: "Велма",
+   nick: "velma",
 
-scoobyEntry.save().then(() => scoobyEntry.gav());
+})
+
+
+
+
+scooby_1.save();
+
 
