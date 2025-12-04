@@ -5,7 +5,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/scoobyMongoose2025');
 var Scooby = require('./models/scooby-du.js').Scooby
 
 
-var scooby_1 = new Scooby({
+var scooby = new Scooby({
    title: "Велма",
    nick: "velma",
 
@@ -14,6 +14,6 @@ var scooby_1 = new Scooby({
 
 
 
-scooby_1.save();
+scooby.save();
 
 

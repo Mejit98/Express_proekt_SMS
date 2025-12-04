@@ -19,7 +19,7 @@ async function main() {
  await client.connect();
  console.log('Connected successfully to server');
  const db = client.db(dbName);
- const collection = db.collection('scoobys');
+ const collection = db.collection('scoobies');
 
 
  // the following code examples can be pasted here...
