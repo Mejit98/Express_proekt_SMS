@@ -4,8 +4,9 @@ var Scooby = require('../models/scooby-du').Scooby;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('Новый маршрутизатор, для маршрутов, начинающихся с scoobys');
+  res.send('Новый маршрутизатор, для маршрутов, начинающихся с scoobies');
 });
+
 /* Страница корпорации тайна */
 router.get("/:nick", async function(req, res, next) {
     var scoobies = await Scooby.find({nick: req.params.nick});

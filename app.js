@@ -5,11 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/scooby2025')
+var session = require("express-session")
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var indexScooby = require('./routes/scoobys');
+var indexScooby = require('./routes/scoobies');
 
 var app = express();
 
@@ -24,9 +25,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+ secret: "Scooby-Doo! Mystery Incorporated",
+ cookie:{maxAge:60*1000},
+ proxy: true,
+ resave: true,
+ saveUninitialized: true
+}))
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/scoobys', indexScooby);
+app.use('/scoobies', indexScooby);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
