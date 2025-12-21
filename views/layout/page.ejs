@@ -28,21 +28,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <% if(typeof nav == 'object' && nav){
+                  nav.forEach(function(item){
+               %>
             <li class="nav-item">
-              <a class="nav-link" href="/scoobies/fred">Фред</a>
+              <a  class="nav-link" href="/scoobies/<%= item.nick %>"><%= item.title %></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/scoobies/scooby-dy">Скуби-ду</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/scoobies/sheki">Шегги</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/scoobies/dafna">Дафна</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/scoobies/velma">Велма</a>
-            </li>
+               <%
+                 })}
+               %>
           </ul>
         </div>
       </div>
