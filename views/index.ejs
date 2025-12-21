@@ -6,6 +6,12 @@
   </head>
   <body>
     <% layout('./layout/page.ejs') %>
+    <% if(user) {%>
+       <h1>Привет <%= user.username %></h1>
+    <% }else{ %>
+       <h1>Привет видимо мы с тобой еще не знакомы</h1>
+    <% } %>
+
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <p>Счетчик: <%= counter %></p>
