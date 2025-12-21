@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-<% layout('./layout/page.ejs') %>
+<% layout('layout/page') %>
 <h1><%= title %></h1>
 <img src="<%= picture %>" alt="" height="300"/>
 <h4>Несколько слов о нашем герое: <%=desc%></h4>
-</body>
-</html>

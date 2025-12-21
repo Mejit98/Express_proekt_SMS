@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var createError = require('http-errors');
 var Scooby = require('../models/scooby-du').Scooby;
 
 /* GET users listing. */
@@ -12,11 +13,11 @@ router.get("/:nick", async function(req, res, next) {
     var scoobies = await Scooby.find({nick: req.params.nick});
     console.log(scoobies)
     if(!scoobies.length) return next(new Error("Нет такого персонажа в мультсериале Корпорация тайна"))
-       var scooby = scoobies[0];
+       var scoob = scoobies[0];
        res.render('scoob', {
-           title: scooby.title,
-           picture: scooby.avatar,
-           desc: scooby.desc
+           title: scoob.title,
+           picture: scoob.avatar,
+           desc: scoob.desc
        })
 });
 module.exports = router;
