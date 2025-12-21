@@ -36,6 +36,10 @@ app.use(session({
  store: MongoStore.create({mongoUrl: 'mongodb://localhost/scooby2025'}),
  cookie:{maxAge:60*1000}
 }));
+app.use(function(req,res,next){
+ req.session.counter = req.session.counter + 1 || 1
+ next()
+ })
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
