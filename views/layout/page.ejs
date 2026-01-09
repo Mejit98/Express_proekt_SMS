@@ -8,7 +8,7 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
-    <!-- Google Fonts: Luckiest Guy (мультяшный стиль) -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-          <!-- МЕНЮ -->
+          
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <% if (Array.isArray(nav) && nav.length > 0) { %>
               <% nav.forEach(function(item) { %>
@@ -49,7 +49,7 @@
             <% } %>
           </ul>
 
-          <!-- ПРАВАЯ ЧАСТЬ -->
+     
           <ul class="navbar-nav">
             <% if (user) { %>
               <li class="nav-item">
@@ -70,7 +70,7 @@
       </div>
     </nav>
 
-    <!-- КОНТЕНТ СТРАНИЦ -->
+  
     <div class="container my-4 fade-in">
   <%- body %>
 </div>
