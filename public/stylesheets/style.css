@@ -1,8 +1,79 @@
+/* Основной фон */
 body {
+  background-image: url('/images/fon.jpg'); /* путь к картинке леса */
+  background-size: cover; /* растянуть на весь экран */
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #eaeaea !important; /* твой светлый цвет текста */
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  position: relative;
+  min-height: 100vh;
 }
 
-a {
-  color: #00B7FF;
+/* Полупрозрачный темный слой поверх леса */
+body::before {
+  content: "";
+  position: fixed; /* чтобы слой покрывал весь экран */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 43, 43, 0.7); /* похожий на старый #2b2b2b, прозрачный */
+  z-index: 0; /* под основным контентом */
 }
+
+/* Основной контент поверх overlay */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Плавное появление страниц */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover-эффект карточек */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+h1 {
+    animation: bounceIn 0.8s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* Основной мультяшный шрифт для заголовков */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+
+/* Ссылки остаются твоего цвета */
+a {
+  color: #00B7FF; 
+}
+
+
